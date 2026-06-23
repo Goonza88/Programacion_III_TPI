@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store</title>
+    <style>body { opacity: 0; }</style>
+</head>
+<body id="clientBody" class="preload">
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li id="bienvenido"></li>
+                <li id="adminNav"><a href="../admin/adminHome.html">Administracion</a></li>
+                <li><a href="../pedidos/pedidos.html">Mis Pedidos</a></li>
+                <li><a href="../cart/cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+        <ul id="sesion">
+            <li><a href="../auth/login/login.html" data-logout>Cerrar Sesion</a></li>
+        </ul>
+    </header>
+
+    <div id="toast"></div>
+
+    <main>
+        <aside id="categorias" class="categorias">
+            <h2 class="nav">Categorias</h2>
+            <ul id="lista-categorias"></ul>
+        </aside>
+
+        <section id="contenido-central">
+            <section id="titulos">
+                <label for="buscarProducto"><h2 id="buscador" class="nav">Buscador</h2></label>
+                <h2 id="favoritos" class="nav">Productos favoritos de la gente</h2>
+                <h2 id="catalogo" class="nav">Catalogo completo</h2>
+            </section>
+
+            <section>
+                <form>
+                    <input id="buscarProducto" type="text" placeholder="Ej: Hamburguesa, Pizza...">
+                    <button type="submit">Buscar</button>
+                    <label for="ordenar"></label><select id="ordenar">
+                        <option value="">Ordenar por...</option>
+                        <option value="nombre-asc">Nombre A-Z</option>
+                        <option value="nombre-desc">Nombre Z-A</option>
+                        <option value="precio-asc">Precio mas bajo</option>
+                        <option value="precio-desc">Precio mas alto</option>
+                    </select>
+                </form>
+            </section>
+
+            <section id="productos">
+                <section id="contenedor-productos"></section>
+            </section>
+        </section>
+
+        <aside id="carrito" class="carrito">
+            <h2>Carrito</h2>
+            <section id="carrito-productos"></section>
+            <section>
+                <p id="carrito-total"></p>
+                <button id="carrito-ir">Ir a Pagar</button>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p id="p1">Contacto: info@foodstore.com</p>
+        <p id="p2">&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="../client/clientHome.ts"></script>
+</body>
+</html>

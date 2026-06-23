@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Store</title>
+    <style>body { opacity: 0; }</style>
+</head>
+<body id="adminBody" class="preload">
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li><a href="../client/clientHome.html">Tienda</a></li>
+                <li><a href="../pedidos/pedidos.html">Mis Pedidos</a></li>
+                <li><a href="../cart/cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+        <ul id="sesion">
+            <li><a href="../auth/login/login.html" data-logout>Cerrar Sesion</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <aside>
+            <h3>Administracion</h3>
+            <ul>
+                <li id="irDash">Dashboard</li>
+                <li id="irCate">Categorias</li>
+                <li id="irProd">Productos</li>
+                <li id="irPedi">Pedidos</li>
+            </ul>
+        </aside>
+
+        <section id="panelAdmin" class="panel activo">
+            <h2>Panel de Administracion</h2>
+            <ul>
+                <li>
+                    <h3>Categorias</h3>
+                    <p id="cantCategorias"></p>
+                    <button id="btnCate">Gestionar</button>
+                </li>
+                <li>
+                    <h3>Productos</h3>
+                    <p id="cantProductos"></p>
+                    <button id="btnProd">Gestionar</button>
+                </li>
+                <li>
+                    <h3>Disponibles</h3>
+                    <p id="cantDisponibles"></p>
+                    <button id="btnDisp">Gestionar</button>
+                </li>
+                <li>
+                    <h3>Pedidos</h3>
+                    <p id="cantPedidos"></p>
+                    <button id="btnPedi">Gestionar</button>
+                </li>
+            </ul>
+            <h2>Resumen rapido</h2>
+            <ul>
+                <li>
+                    <h3>Ingresos totales</h3>
+                    <p id="ingresos"></p>
+                </li>
+                <li>
+                    <h3>Pedidos Pendientes</h3>
+                    <p id="pedPen"></p>
+                </li>
+                <li>
+                    <h3>Pedidos Confirmados</h3>
+                    <p id="pedCon"></p>
+                </li>
+                <li>
+                    <h3>Pedidos Terminados</h3>
+                    <p id="pedTer"></p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="panelCate" class="panel">
+            <h2>Panel de Categorias <button id="btnAgregarCategoria">+</button></h2>
+            <div class="encabezados">
+                <span>ID</span>
+                <span>Imagen</span>
+                <span>Nombre</span>
+                <span>Descripcion</span>
+                <span>Acciones</span>
+                <span></span>
+            </div>
+            <section id="container-categorias"></section>
+        </section>
+
+        <section id="agregarCategoria" class="panel">
+            <h2>Agregar Categoria</h2>
+            <form id="formCategoria">
+                <label for="nombreCate">Nombre:</label>
+                <input
+                    type="text"
+                    id="nombreCate"
+                    name="nombre"
+                    required
+                >
+                <label for="descripcionCate">Descripcion:</label>
+                <input
+                    type="text"
+                    id="descripcionCate"
+                    name="descripcion"
+                    required
+                >
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section id="panelPro" class="panel">
+            <h2>Panel de Productos <button id="btnAgregarProducto">+</button></h2>
+            <div class="encabezados">
+                <span>ID</span>
+                <span>Imagen</span>
+                <span>Nombre</span>
+                <span>Categoria</span>
+                <span>Descripcion</span>
+                <span>Stock</span>
+                <span>Disponible</span>
+                <span>Precio</span>
+                <span>Acciones</span>
+                <span></span>
+            </div>
+            <section id="container-productos"></section>
+        </section>
+
+        <section id="agregarProducto" class="panel">
+            <h2>Agregar Producto</h2>
+            <form id="formProducto">
+                <label for="nombreProd">Nombre:</label>
+                <input
+                        type="text"
+                        id="nombreProd"
+                        name="nombre"
+                        required
+                >
+                <label for="precio">Precio:</label>
+                <input
+                        type="number"
+                        id="precio"
+                        name="precio"
+                        min="0"
+                        step="0.01"
+                        required
+                >
+                <label for="descripcionProd">Descripcion:</label>
+                <input
+                        type="text"
+                        id="descripcionProd"
+                        name="descripcion"
+                        required
+                >
+                <label for="stock">Stock:</label>
+                <input
+                        type="number"
+                        id="stock"
+                        name="stock"
+                        min="0"
+                        required
+                >
+                <label for="imagen">Imagen URL:</label>
+                <input
+                        type="text"
+                        id="imagen"
+                        name="imagen"
+                        required
+                >
+                <label for="categoria">ID Categoria:</label>
+                <input
+                        type="number"
+                        id="categoria"
+                        name="idCategoria"
+                        min="1"
+                        required
+                >
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section id="panelPedi" class="panel">
+            <h2>Panel de Pedidos</h2>
+            <div class="encabezados">
+                <span>ID</span>
+                <span>Usuario ID</span>
+                <span>Fecha</span>
+                <span>Metodo</span>
+                <span>Direccion</span>
+                <span>Celular</span>
+                <span>Estado</span>
+                <span>Total</span>
+                <span>Acciones</span>
+                <span></span>
+            </div>
+            <section id="container-pedidos"></section>
+        </section>
+    </main>
+
+    <footer>
+        <p id="p1">Contacto: info@foodstore.com</p>
+        <p id="p2">&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="../admin/adminHome.ts"></script>
+</body>
+</html>

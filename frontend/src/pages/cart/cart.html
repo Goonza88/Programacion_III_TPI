@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store</title>
+    <style>body { opacity: 0; }</style>
+</head>
+<body id="cartBody"  class="preload">
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li id="adminNav"><a href="../admin/adminHome.html">Administracion</a></li>
+                <li><a href="../pedidos/pedidos.html">Mis Pedidos</a></li>
+                <li><a href="../client/clientHome.html">Seguir comprando</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="toast"></div>
+
+    <main>
+        <section id="carrito-productos"></section>
+
+        <aside class="carrito-resumen">
+            <h3>Total del carrito:</h3>
+            <p id="carrito-total"></p>
+
+            <section id="panel">
+                <form id="formCarrito">
+                    <label for="telefono">Tu telefono:</label>
+                    <input
+                            type="text"
+                            id="telefono"
+                            name="telefono"
+                            placeholder=""
+                            required
+                    >
+                    <label for="direccion">Tu direccion:</label>
+                    <input
+                            type="text"
+                            id="direccion"
+                            name="direccion"
+                            required
+                    >
+                    <label for="metodo">Tu metodo:</label>
+                    <select id="metodo" name="metodo">
+                        <option value="EFECTIVO">Efectivo</option>
+                        <option value="TARJETA">Tarjeta</option>
+                        <option value="TRANSFERENCIA">Transferencia</option>
+                    </select>
+                    <button type="submit" id="compraFinal">Pagar</button>
+                </form>
+            </section>
+
+            <button id="pagar">Confirmar compra</button>
+            <button id="eliminar">Eliminar carrito</button>
+            <section id="final">
+                <p>Esta seguro?</p>
+                <button id="si">Si</button>
+                <button id="no">No</button>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p id="p1">Contacto: info@foodstore.com</p>
+        <p id="p2">&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="../cart/cart.ts"></script>
+</body>
+</html>

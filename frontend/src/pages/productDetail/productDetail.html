@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Store</title>
+    <style>body { opacity: 0; }</style>
+</head>
+<body id="productBody"  class="preload">
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <ul>
+                <li><a href="../client/clientHome.html">Volver</a></li>
+                <li><a href="../pedidos/pedidos.html">Mis Pedidos</a></li>
+                <li><a href="../auth/login/login.html" data-logout>Cerrar Sesion</a></li>
+                <li><a href="../cart/cart.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="toast"></div>
+
+    <main>
+        <section id="producto"></section>
+    </main>
+
+    <footer>
+        <p id="p1">Contacto: info@foodstore.com</p>
+        <p id="p2">&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+<script type="module" src="../productDetail/productDetail.ts"></script>
+</body>
+</html>

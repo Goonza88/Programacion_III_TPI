@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Store</title>
+    <style>body { opacity: 0; }</style>
+</head>
+<body id="registroBody" class="preload">
+    <header>
+        <h1>Food Store: Tu tienda de comida favorita!</h1>
+        <nav>
+            <ul>
+                <li><a href="../login/login.html">Ingreso</a></li>
+                <li><a href="../registro/registro.html">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Registrate</h1>
+            <form id="registro" method="post">
+                <div>
+                    <label for="nombre">Tu nombre:</label>
+                    <br>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required
+                    >
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <br>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="ejemplo@email.com"
+                        required
+                    >
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <br>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="************"
+                        required
+                    >
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+            <p>¿Tenes cuenta? Ingresa!</p>
+            <button id="login">Ir a Login</button>
+        </section>
+    </main>
+
+    <footer>
+        <p id="p1">Contacto: info@foodstore.com</p>
+        <p id="p2">&copy; 2026 Food Store. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="../registro/registro.ts"></script>
+</body>
+</html>
