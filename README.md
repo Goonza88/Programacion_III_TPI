@@ -28,10 +28,10 @@ Es la culminación de todos los trabajos prácticos anteriores, en el cuál inte
 ### Backend
 
 1. Abrir la carpeta `backend`
-2. Ejecutar:
+2. Ejecutar en bash:
 
 ```bash
-./mvnw spring-boot:run
+./gradlew bootRun
 ```
 
 O desde IntelliJ ejecutar la clase:
